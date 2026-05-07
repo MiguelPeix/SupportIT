@@ -1,10 +1,10 @@
 -- =============================================
 -- Gestionnaire de tickets de support IT
--- Base de données : tickets_support
+-- Base de données : supportit
 -- =============================================
 
-CREATE DATABASE IF NOT EXISTS tickets_support CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE tickets_support;
+CREATE DATABASE IF NOT EXISTS supportit CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE supportit;
 
 -- Table des utilisateurs
 CREATE TABLE IF NOT EXISTS users (

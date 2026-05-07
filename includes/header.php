@@ -220,25 +220,25 @@ $flash = getFlash();
 <body>
 
 <nav>
-    <a href="/projet-tickets/index.php" class="nav-brand">⚡ Support<span>IT</span></a>
+    <a href="/SupportIT/index.php" class="nav-brand">⚡ Support<span>IT</span></a>
 
     <?php if (isLoggedIn()): ?>
     <div class="nav-links">
-        <a href="/projet-tickets/index.php">Mes tickets</a>
-        <a href="/projet-tickets/create.php">+ Nouveau</a>
+        <a href="/SupportIT/index.php">Mes tickets</a>
+        <a href="/SupportIT/create.php">+ Nouveau</a>
         <?php if (isAdmin()): ?>
-        <a href="/projet-tickets/admin/index.php">Admin</a>
+        <a href="/SupportIT/admin/index.php">Admin</a>
         <?php endif; ?>
     </div>
     <div class="nav-user">
         <?php if (isAdmin()): ?><span class="badge-admin">Admin</span><?php endif; ?>
         <span><?= htmlspecialchars($user['nom']) ?></span>
-        <a href="/projet-tickets/logout.php" class="btn btn-secondary btn-sm">Déconnexion</a>
+        <a href="/SupportIT/logout.php" class="btn btn-secondary btn-sm">Déconnexion</a>
     </div>
     <?php else: ?>
     <div class="nav-links">
-        <a href="/projet-tickets/login.php">Connexion</a>
-        <a href="/projet-tickets/register.php" class="btn btn-primary btn-sm">S'inscrire</a>
+        <a href="/SupportIT/login.php">Connexion</a>
+        <a href="/SupportIT/register.php" class="btn btn-primary btn-sm">S'inscrire</a>
     </div>
     <?php endif; ?>
 </nav>

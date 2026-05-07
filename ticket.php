@@ -14,14 +14,14 @@ $ticket = $stmt->fetch();
 
 if (!$ticket) {
     setFlash('error', 'Ticket introuvable.');
-    header('Location: /projet-tickets/index.php');
+    header('Location: /SupportIT/index.php');
     exit;
 }
 
 // Vérifier l'accès (propriétaire ou admin)
 if ($ticket['user_id'] !== $user['id'] && !isAdmin()) {
     setFlash('error', 'Accès non autorisé.');
-    header('Location: /projet-tickets/index.php');
+    header('Location: /SupportIT/index.php');
     exit;
 }
 
@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['message'])) {
         $stmt = $pdo->prepare('INSERT INTO commentaires (ticket_id, user_id, message) VALUES (?, ?, ?)');
         $stmt->execute([$id, $user['id'], $message]);
         setFlash('success', 'Commentaire ajouté.');
-        header('Location: /projet-tickets/ticket.php?id=' . $id . '#comments');
+        header('Location: /SupportIT/ticket.php?id=' . $id . '#comments');
         exit;
     }
 }
@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['statut'])) {
             $stmt = $pdo->prepare('UPDATE tickets SET statut = ? WHERE id = ?');
             $stmt->execute([$statut, $id]);
             setFlash('success', 'Statut mis à jour.');
-            header('Location: /projet-tickets/ticket.php?id=' . $id);
+            header('Location: /SupportIT/ticket.php?id=' . $id);
             exit;
         }
     }
@@ -62,7 +62,7 @@ require_once __DIR__ . '/includes/header.php';
 ?>
 
 <div style="margin-bottom:1rem;">
-    <a href="/projet-tickets/index.php" style="color:var(--muted); text-decoration:none; font-size:0.85rem;">← Retour à la liste</a>
+    <a href="/SupportIT/index.php" style="color:var(--muted); text-decoration:none; font-size:0.85rem;">← Retour à la liste</a>
 </div>
 
 <div style="display:grid; grid-template-columns: 1fr 280px; gap:1.5rem; align-items:start;">

@@ -15,14 +15,14 @@ function isAdmin(): bool {
 
 function requireLogin(): void {
     if (!isLoggedIn()) {
-        header('Location: /projet-tickets/login.php');
+        header('Location: /SupportIT/login.php');
         exit;
     }
 }
 
 function requireAdmin(): void {
     if (!isAdmin()) {
-        header('Location: /projet-tickets/index.php');
+        header('Location: /SupportIT/index.php');
         exit;
     }
 }

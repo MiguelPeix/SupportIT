@@ -28,7 +28,7 @@ require_once __DIR__ . '/includes/header.php';
         <h1><?= isAdmin() ? 'Tous les tickets' : 'Mes tickets' ?></h1>
         <p><?= isAdmin() ? 'Vue administrateur — tous les tickets' : 'Retrouvez l\'ensemble de vos demandes de support' ?></p>
     </div>
-    <a href="/projet-tickets/create.php" class="btn btn-primary">+ Nouveau ticket</a>
+    <a href="/SupportIT/create.php" class="btn btn-primary">+ Nouveau ticket</a>
 </div>
 
 <!-- STATS -->
@@ -53,7 +53,7 @@ require_once __DIR__ . '/includes/header.php';
         <div style="text-align:center; padding:3rem; color:var(--muted);">
             <div style="font-size:2.5rem; margin-bottom:1rem;">📭</div>
             <p>Aucun ticket pour le moment.</p>
-            <a href="/projet-tickets/create.php" class="btn btn-primary" style="margin-top:1rem;">Créer mon premier ticket</a>
+            <a href="/SupportIT/create.php" class="btn btn-primary" style="margin-top:1rem;">Créer mon premier ticket</a>
         </div>
     <?php else: ?>
         <table>
@@ -74,7 +74,7 @@ require_once __DIR__ . '/includes/header.php';
                 <tr>
                     <td style="color:var(--muted); font-size:0.8rem;">#<?= $t['id'] ?></td>
                     <td>
-                        <a href="/projet-tickets/ticket.php?id=<?= $t['id'] ?>" style="color:var(--text); text-decoration:none; font-weight:500;">
+                        <a href="/SupportIT/ticket.php?id=<?= $t['id'] ?>" style="color:var(--text); text-decoration:none; font-weight:500;">
                             <?= htmlspecialchars($t['titre']) ?>
                         </a>
                     </td>
@@ -86,7 +86,7 @@ require_once __DIR__ . '/includes/header.php';
                     <td><span class="badge badge-<?= $t['statut'] ?>"><?= str_replace('_', ' ', $t['statut']) ?></span></td>
                     <td style="color:var(--muted); font-size:0.82rem;"><?= date('d/m/Y', strtotime($t['created_at'])) ?></td>
                     <td>
-                        <a href="/projet-tickets/ticket.php?id=<?= $t['id'] ?>" class="btn btn-secondary btn-sm">Voir</a>
+                        <a href="/SupportIT/ticket.php?id=<?= $t['id'] ?>" class="btn btn-secondary btn-sm">Voir</a>
                     </td>
                 </tr>
                 <?php endforeach; ?>

@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $id = $pdo->lastInsertId();
 
         setFlash('success', 'Ticket #' . $id . ' créé avec succès !');
-        header('Location: /projet-tickets/ticket.php?id=' . $id);
+        header('Location: /SupportIT/ticket.php?id=' . $id);
         exit;
     }
 }
@@ -82,7 +82,7 @@ require_once __DIR__ . '/includes/header.php';
             </div>
 
             <div style="display:flex; gap:0.75rem; justify-content:flex-end; margin-top:0.5rem;">
-                <a href="/projet-tickets/index.php" class="btn btn-secondary">Annuler</a>
+                <a href="/SupportIT/index.php" class="btn btn-secondary">Annuler</a>
                 <button type="submit" class="btn btn-primary">Soumettre le ticket</button>
             </div>
         </form>

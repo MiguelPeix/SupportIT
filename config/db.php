@@ -2,7 +2,7 @@
 // config/db.php - Connexion à la base de données via PDO
 
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'tickets_support');
+define('DB_NAME', 'supportit');
 define('DB_USER', 'root');       // À modifier selon ton config WAMP/XAMPP
 define('DB_PASS', '');           // À modifier si tu as un mot de passe
 

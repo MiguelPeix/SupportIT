@@ -4,7 +4,7 @@ require_once __DIR__ . '/includes/auth.php';
 require_once __DIR__ . '/config/db.php';
 
 if (isLoggedIn()) {
-    header('Location: /projet-tickets/index.php');
+    header('Location: /SupportIT/index.php');
     exit;
 }
 
@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt->execute([$nom, $email, $hash]);
 
             setFlash('success', 'Compte créé avec succès ! Connectez-vous.');
-            header('Location: /projet-tickets/login.php');
+            header('Location: /SupportIT/login.php');
             exit;
         }
     }
@@ -131,7 +131,7 @@ $pageTitle = 'Inscription — SupportIT';
     </form>
 
     <div class="auth-footer">
-        Déjà un compte ? <a href="/projet-tickets/login.php">Se connecter</a>
+        Déjà un compte ? <a href="/SupportIT/login.php">Se connecter</a>
     </div>
 </div>
 </body>

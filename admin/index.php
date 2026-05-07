@@ -54,7 +54,7 @@ require_once __DIR__ . '/../includes/header.php';
 
 <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:1rem;">
     <h2 style="font-family:'Syne',sans-serif; font-weight:700;">Derniers tickets</h2>
-    <a href="/projet-tickets/index.php" class="btn btn-secondary btn-sm">Voir tous</a>
+    <a href="/SupportIT/index.php" class="btn btn-secondary btn-sm">Voir tous</a>
 </div>
 
 <div class="card" style="padding:0; overflow:hidden;">
@@ -81,7 +81,7 @@ require_once __DIR__ . '/../includes/header.php';
                 <td><span class="badge badge-<?= $t['priorite'] ?>"><?= $t['priorite'] ?></span></td>
                 <td><span class="badge badge-<?= $t['statut'] ?>"><?= str_replace('_', ' ', $t['statut']) ?></span></td>
                 <td style="color:var(--muted); font-size:0.82rem;"><?= date('d/m/Y', strtotime($t['created_at'])) ?></td>
-                <td><a href="/projet-tickets/ticket.php?id=<?= $t['id'] ?>" class="btn btn-secondary btn-sm">Voir</a></td>
+                <td><a href="/SupportIT/ticket.php?id=<?= $t['id'] ?>" class="btn btn-secondary btn-sm">Voir</a></td>
             </tr>
             <?php endforeach; ?>
         </tbody>

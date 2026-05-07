@@ -4,7 +4,7 @@ require_once __DIR__ . '/includes/auth.php';
 require_once __DIR__ . '/config/db.php';
 
 if (isLoggedIn()) {
-    header('Location: /projet-tickets/index.php');
+    header('Location: /SupportIT/index.php');
     exit;
 }
 
@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['role']    = $user['role'];
 
             setFlash('success', 'Bienvenue, ' . $user['nom'] . ' !');
-            header('Location: /projet-tickets/index.php');
+            header('Location: /SupportIT/index.php');
             exit;
         } else {
             $errors[] = 'Email ou mot de passe incorrect.';
@@ -153,7 +153,7 @@ $pageTitle = 'Connexion — SupportIT';
     </form>
 
     <div class="auth-footer">
-        Pas encore de compte ? <a href="/projet-tickets/register.php">Créer un compte</a>
+        Pas encore de compte ? <a href="/SupportIT/register.php">Créer un compte</a>
     </div>
 </div>
 </body>
